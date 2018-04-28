@@ -54,7 +54,7 @@ def main():
         tela.blit(imagem,(x,y))
         (x,y) = pygame.mouse.get_pos()
         pygame.draw.rect(tela, cor_vermelha, ret)
-        pygame.display.update()#Atualizações da tela
+        pygame.display.update()
 
     pygame.quit()#Fecha a janela
 
