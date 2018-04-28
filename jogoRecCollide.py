@@ -13,7 +13,7 @@ def main():
 
     tela = pygame.display.set_mode([screen_width, screen_height])
     # Defini o tamanho de Tela
-    pygame.display.set_caption("Jogo Colisão com Retângulo")
+    pygame.display.set_caption("Jogo Colisão com Retângulos")
     # Defini Texto da janela
 
     relogio = pygame.time.Clock()
@@ -110,8 +110,8 @@ def main():
             ret4.left = 602
             ret5.left = 602
             ret6.left = 602
-            ret7.left = 603
-            ret8.left = 603
+            ret7.left = 602
+            ret8.left = 602
 
 
         pygame.draw.rect(tela, cor_preta, ret)  # Desenha retangulo
