@@ -49,6 +49,7 @@ def main():
     #Referência do áudio de explosão com o endereço na pasta raiz do projeto
 
     listaRet = []
+    #Lista para guardar os retângulos aleatórios
 
     for x in range(15):
         h = random.randrange(20,90)
@@ -56,12 +57,14 @@ def main():
         x = random.randrange(600)
         y = random.randrange(600)
         listaRet.append(pygame.Rect(x,y,w,h))
+        #Preenche a lista de retângulos
 
     #Enquanto o jogo estiver executando
     while onGame:
 
         for rets in listaRet:
             pygame.draw.rect(sup, cor_azul, rets)
+            #desenha cada item da lista de retângulos
 
         for event in pygame.event.get():
         #Capturo um evento e aplico na variável event
@@ -81,9 +84,11 @@ def main():
             #Captura evento de click do mouse
                 #pygame.mouse.set_pos(screen_width/2, screen_height/2)
                 #Seta a posição do mouse no centro da tela
+
                 if ret.colliderect(ret2):
                     ret2.width = 0
                     ret2.height = 0
+                    #Faz o retângulo desaparecer
 
             #Movimento pelo teclado
             if event.type == pygame.KEYDOWN:
@@ -121,18 +126,28 @@ def main():
         ret.top -= ret.width / 2  # Define o centro objeto no cento de sua altura
 
 
-        '''if ret.colliderect(ret2):  # Se houver colisão com outro objeto
-            ret2.inflate_ip(3,3)
+        #if ret.colliderect(ret2):  # Se houver colisão com outro objeto
+            #ret2.inflate_ip(3,3)
             #Animação para inflar o retângulo
+
             #text = fonte_perdeu.render('COLIDIU',1,cor_verde)
             #tela.blit(text, [150,400])
             #audio_explosao.play()
-            (ret.left, ret.top) = (xant, yant)  # define a posição do objeto para a posição anterior a colisão'''
 
+            #(ret.left, ret.top) = (xant, yant)  # define a posição do objeto para a posição anterior a colisão
+
+        # Comandos para criar e exbir contador
         segundos = pygame.time.get_ticks()/1000
+        #Armazeno o tempo de execução do prgrama em milisegundos
+
         segundos = str(segundos)
+        #Coverto a informação em uma STring
         contador = fonte_texto.render(segundos,0,cor_branca)
+        #"Renderiza" o contador para ser mostrado na tela
         tela.blit(contador,(300,10))
+        #adiciona o contador a tela
+
+
         pygame.draw.rect(tela, cor_vermelha, ret)#Desenha retangulo
         pygame.draw.rect(tela, cor_azul, ret2)  # Desenha retangulo
         pygame.display.update()#Atualizações da tela
