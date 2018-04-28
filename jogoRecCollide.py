@@ -90,7 +90,7 @@ def main():
 
         (xant, yant) = (ret.left, ret.top)  # Captura posiçãp do objeto antes da colisão
         (ret.left, ret.top) = pygame.mouse.get_pos()  # define a posição do retângulo no mouse
-        ret.left -= (ret.width / 2)-20  # Define o centro do retângulo como o centro de sua largura (posição do mouse)
+        ret.left -= (ret.width / 2)  # Define o centro do retângulo como o centro de sua largura (posição do mouse)
         ret.top -= ret.height / 2  # Define o centro do                                                                                                                                                                          objeto no cento de sua altura
 
         if ret.colliderect(ret2) or ret.colliderect(ret3)or ret.colliderect(ret4)or ret.colliderect(ret5)or ret.colliderect(ret6)or ret.colliderect(ret7)or ret.colliderect(ret8):  # Se houver colisão com outro objeto
