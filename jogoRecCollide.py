@@ -1,4 +1,4 @@
-import pygame
+import pygame, time
 
 def main():
     # As Definições dos objetos
@@ -94,11 +94,13 @@ def main():
         ret.top -= ret.height / 2  # Define o centro do                                                                                                                                                                          objeto no cento de sua altura
 
         if ret.colliderect(ret2) or ret.colliderect(ret3)or ret.colliderect(ret4)or ret.colliderect(ret5)or ret.colliderect(ret6)or ret.colliderect(ret7)or ret.colliderect(ret8):  # Se houver colisão com outro objeto
-            text = fonte_perdeu.render('PERDEU!', 1, cor_verde)
-            tela.blit(text, [150, 400])
             audio_explosao.play()
             audio_explosao.set_volume(0.5)
             (ret.left, ret.top) = (xant, yant)# define a posição do objeto para a posição anterior a colisão
+            relogio.tick(1)
+            text = fonte_perdeu.render('PERDEU!', 1, cor_verde)
+            tela.blit(text, [150, 400])
+            #time.sleep(2)
             pygame.mouse.set_pos(10, 10)
         if ret.top > 400:
             text = fonte_perdeu.render('VENCEU!', 1, cor_verde)
