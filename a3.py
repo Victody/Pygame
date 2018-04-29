@@ -29,7 +29,7 @@ def main():
     cor_vermelha = (227,57,9)
     # variável com código RGB
 
-    imagem = pygame.image.load('assets\imagem\DiretorMorte (1).png')
+    imagem = pygame.image.load('assets\imagem\F117Space.png')
     (x,y) = (150,100)
 
     ret = pygame.Rect(250,300,20,500)
@@ -51,7 +51,7 @@ def main():
         relogio.tick(120)
         # tick atualiza a tela a 60 frames por segundo
         tela.fill(cor_branca)
-        tela.blit(imagem,(x,y))
+        tela.blit(imagem,(x-25,y-25))
         (x,y) = pygame.mouse.get_pos()
         pygame.draw.rect(tela, cor_vermelha, ret)
         pygame.display.update()
