@@ -1,3 +1,4 @@
+_author_ = 'http://victorponciano.hol.es/'
 import pygame, PlayerClass, enemyRecs, time
 
 def Collide(player, recs):
